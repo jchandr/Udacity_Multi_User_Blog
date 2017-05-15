@@ -293,7 +293,8 @@ class NewPost(Handler):
                 content=content,
                 user=user_id)
             a.put()
-            self.redirect('/post/%s' % str(a.key().id()))
+            return self.redirect('/post/%s' % str(a.key().id()))
+
         # othersie throw and error to let the user know that both subject and
         # content are required
         else:
