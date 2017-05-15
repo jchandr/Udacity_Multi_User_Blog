@@ -330,9 +330,9 @@ class PostPage(Handler):
             "post.html",
             post=post,
             likes=likes,
-            unlikes=unlikes)
-            # comments_count=comments_count
-            # post_comments=post_comments
+            unlikes=unlikes,
+            comments_count=comments_count,
+            post_comments=post_comments)
 
     def post(self, blog_id):
         # get all the necessary parameters

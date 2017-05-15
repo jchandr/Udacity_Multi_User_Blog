@@ -2,7 +2,7 @@
 {% block content %}
 <div>
     <h2>{{post.subject}}</h2>
-    <small>Posted by {{post.user.name}} on {{post.created.strftime("%b %d, %Y")}}</small>
+    <small>Posted by {{post.user.name}} on {{post.created.strftime("%b %d, %Y %I:%M	%p ")}}</small>
     <p class="content">{{post.content | safe}}</p>
 
 </div>
@@ -28,11 +28,11 @@
             <br><br>
             <div>
                 <div class="pull-left">
-                    <small>Posted by {{comment.user.name}} on {{comment.created.strftime("%b %d, %Y")}}</small>
+                    <small>Posted by {{comment.user.name}} on {{comment.created.strftime("%b %d, %Y %I:%M	%p ")}}</small>
                 </div>
                 <div class="pull-right">
                     {% if comment.user.name == user.name %}
-                        <a style="color:blue" href="/blog/{{post.key().id()}}/editcomment/{{comment.key().id()}}">edit</a> | 
+                        <a style="color:blue" href="/blog/{{post.key().id()}}/editcomment/{{comment.key().id()}}">edit</a> |
                         <a style="color:blue" href="/blog/{{post.key().id()}}/deletecomment/{{comment.key().id()}}">delete</a>
                     {% endif %}
                 </div>
